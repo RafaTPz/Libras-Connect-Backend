@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "libras_connect_backend",
   "version": "1.0.0",
   "description": "Express Backend",
   "main": "src/index.js",
