@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { config } from './config/server.js';
+import authRoutes from './routes/authRoutes.js';
 
 const app = express();
 
@@ -8,8 +9,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Routes
+app.use('/api/auth', authRoutes);
+
 // Basic API test route
 app.get('/api/health', (req, res) => {
+
   res.json({
     status: 'online',
     message: 'Hello from the Express server!',
