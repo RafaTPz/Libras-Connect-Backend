@@ -13,7 +13,7 @@ export const authMiddleware = async (req, res, next) => {
     
     let decoded;
     try {
-      decoded = jwt.verify(token, jwtConfig.secret);
+      decoded = jwt.verify(token, jwtConfig.accessSecret);
     } catch (err) {
       return res.status(401).json({ error: 'Token inválido ou expirado.' });
     }

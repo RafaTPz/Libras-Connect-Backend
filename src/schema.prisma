@@ -7,14 +7,15 @@ generator client {
 }
 
 model User {
-  id          String   @id @default(uuid())
-  name        String
-  email       String   @unique
-  password    String
-  status      String   @default("offline") // "online", "offline"
-  mode        String   @default("TEXT")    // "LIBRAS", "TEXT", "TRANSCRIPTION"
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id            String   @id @default(uuid())
+  name          String
+  email         String   @unique
+  password      String
+  status        String   @default("offline") // "online", "offline"
+  mode          String   @default("TEXT")    // "LIBRAS", "TEXT", "TRANSCRIPTION"
+  refreshToken  String?  @db.Text
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
   
   sentMessages      Message[]     @relation("SentMessages")
   receivedMessages  Message[]     @relation("ReceivedMessages")

@@ -7,6 +7,7 @@ const router = Router();
 // Rotas públicas
 router.post('/register', authController.register);
 router.post('/login', authController.login);
+router.post('/refresh', authController.refresh);
 
 // Rotas privadas
 router.get('/me', authMiddleware, authController.me);
